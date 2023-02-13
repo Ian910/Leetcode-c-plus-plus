@@ -1,10 +1,11 @@
 class Solution {
 public:
-    int titleToNumber(string columnTitle) {
-        int ans = 0;
-        for (int i = 0; i < columnTitle.size(); i++) {
-            ans *= 26;
-            ans += (columnTitle[i] - 'A') + 1;
+    uint32_t reverseBits(uint32_t n) {
+        uint32_t ans = 0;
+        int times = 31;
+        while (times >= 0) {
+            ans += (n % 2) << times--;
+            n >>= 1;
         }
         return ans;
     }
